@@ -72,18 +72,15 @@ img {
     cursor: pointer;
     transition: all 0.15s ease;
     margin: 0.3125rem;
-}
-.dots label:before {
-    content:'';
-    position: absolute;
-    top:-20px;
-    bottom:-30px;
-    left:-20px;
-    right:-20px;
+    box-sizing: content-box;
 }
 .dots label:hover{
     background-color: rgb(192, 192, 192);
     border: solid rgb(192, 192, 192) 2px;
+}
+.dots label span {
+    border-radius: 50%;
+    padding: 15px;
 }
 #img1:checked ~ .items {
     transform: translateX(0%)
@@ -111,7 +108,7 @@ img {
 #img7:checked ~ .items {
     transform: translateX(-600%);
 }
-@media screen and (min-width:567px) and (max-width:1079px) {
+@media screen and (min-width:769px) and (max-width:1079px) {
     img {
         padding-bottom: 15vh;
     }
@@ -125,7 +122,38 @@ img {
         box-sizing: border-box;
     }
 }
+@media screen and (min-width:569px) and (max-width:768px) {
+    img {
+        padding-bottom: 15vh;
+    }
+    .dots {
+        display: flex;
+        justify-content: center;
+        padding: 1vh 0;
+        margin: 0;
+    }
+    .text-dots {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        height: 12vh;
+        position: absolute;
+        bottom: 0;
+        padding: 0;
+        box-sizing: border-box;
+        margin: 0;
+    }
+    .text {
+        margin-bottom: 0.5vh;
+        padding: 0 2vw;
+    }
+}
 @media screen and (min-width:320px) and (max-width:568px) {
+    .slider {
+        position: relative;
+        width: 60%;
+        overflow: hidden;
+    }
     .text-dots {
         display: flex;
         flex-direction: column-reverse;
@@ -144,10 +172,49 @@ img {
         margin: 0;
     }
     img {
-        padding-bottom: 15vh;
+        padding-bottom: 17vh;
     }
     .text {
         margin-bottom: 0.5vh;
         padding: 0 2vw;
     }
 }
+    @media screen and (min-width:101px) and (max-width:319px) {
+        img {
+            padding-bottom: 20vh;
+        }
+        .text-dots {
+            display: flex;
+            flex-direction: column-reverse;
+            width: 100%;
+            height: 20vh;
+            position: absolute;
+            bottom: 0;
+            padding: 0;
+            box-sizing: border-box;
+            margin: 0;
+        }
+        .text {
+            font-size:  0.5em;
+            font-family: Arial, Helvetica, sans-serif;
+            color: rgb(192, 192, 192);
+            flex: 1;
+            text-align: left;
+        }
+        .dots {
+            display: flex;
+            justify-content: center;
+            padding: 1vh 0;
+            margin: 0;
+        }
+        .dots label {
+            position: relative;
+            height: 0.5em;
+            width: 0.5em;
+            border-radius: 50%;
+            border: solid rgb(102, 178, 255) 2px;
+            cursor: pointer;
+            transition: all 0.15s ease;
+            margin: 0.1rem;
+        }
+    }
