@@ -70,14 +70,33 @@ img {
     border-radius: 50%;
     border: solid rgb(102, 178, 255) 2px;
     cursor: pointer;
-    transition: all 0.20s ease;
+    transition: all 2s ease;
     margin: 0.3rem;
     box-sizing: content-box;
 }
 .dots label:hover{
     background-color: rgb(192, 192, 192);
     border: solid rgb(192, 192, 192) 2px;
+    transition: all 1s ease;
 }
+.dots label:active {
+    background-color: rgb(255, 102, 255);
+    border-color: rgb(255, 102, 255);
+    transition: all 0.2s ease;
+}
+/* Стили для активного контрола */
+#img1:checked ~ .items .text-dots .dots label:nth-of-type(1),
+#img2:checked ~ .items .text-dots .dots label:nth-of-type(2),
+#img3:checked ~ .items .text-dots .dots label:nth-of-type(3),
+#img4:checked ~ .items .text-dots .dots label:nth-of-type(4),
+#img5:checked ~ .items .text-dots .dots label:nth-of-type(5),
+#img6:checked ~ .items .text-dots .dots label:nth-of-type(6),
+#img7:checked ~ .items .text-dots .dots label:nth-of-type(7) {
+    background: rgb(102, 178, 255);
+    border-color: rgb(102, 178, 255);
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
 .click {
     position: absolute;
     top: 50%;
@@ -90,10 +109,6 @@ img {
     cursor: pointer;
 }
 #img1:checked ~ .items {
-    transform: translateX(0%);
-    transition: transform 0.50s ease-in-out;
-}
-#img1:checked ~ .items .text-dots .text {
     transform: translateX(0%);
     transition: transform 0.50s ease-in-out;
 }
@@ -123,8 +138,7 @@ img {
     transform: translateX(-500%);
     transition: transform 0.50s ease-in-out;
 }
-
-#img7:checked ~ .items {
+    #img7:checked ~ .items {
     transform: translateX(-600%);
     transition: transform 0.50s ease-in-out;
 }
